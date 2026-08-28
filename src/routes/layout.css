@@ -1,2 +1,23 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+
+
+/* how does storyboard work */
+
+.how-container {
+    margin: 0.5rem;
+    padding: 2rem;
+    border: 2px solid black;
+}
+
+
+/* we have stepbystep guides to help */
+
+.guide-container {
+    margin: 0.5rem;
+    padding: 1rem;
+    border: 1px solid black;
+    display: flex;
+    justify-content: start;
+    gap: 0.5rem;
+}
