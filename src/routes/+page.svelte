@@ -5,6 +5,7 @@
 		description: string;
 		src: string;
 	}
+
 	const prizes: Prize[] = [
 		{
 			title: 'Steam Dev License',
@@ -40,7 +41,7 @@
 			title: 'Keyboard',
 			hours: '20 hours',
 			description: 'click click clack clack',
-			src: '/prizes/steamlicense.jpg'
+			src: '/prizes/keyboard.webp'
 		}
 	];
 
@@ -79,7 +80,7 @@
 	</div>
 	<!-- windows -->
 	<div
-		class="flex flex-col items-center justify-center gap-4 bg-purple-darkest bg-[url('/bg-window.png')] bg-cover text-center"
+		class="window flex flex-col items-center justify-center gap-4 bg-purple-darkest bg-[url('/bg-window.png')] bg-cover text-center"
 	>
 		<!-- how it work? -->
 		<div class="flex flex-col items-center justify-center gap-4">
@@ -94,7 +95,7 @@
 					<p class="mt-2 leading-5 text-purple-darkest">
 						lorem ipsum dolor sit amet. i forgot the rest of it but it's okay..
 					</p>
-					<img class="mx-auto mt-4 h-[200px] w-full outline" alt="" />
+					<img class="mx-auto mt-4 h-50 w-full outline" alt="" />
 				</div>
 				<div class="how-container">
 					<div class="flex flex-row items-center justify-start gap-6">
@@ -104,7 +105,7 @@
 					<p class="mt-2 leading-5 text-purple-darkest">
 						lorem ipsum dolor sit amet. i forgot the rest of it but it's okay..
 					</p>
-					<img class="mx-auto mt-4 h-[200px] w-full outline" />
+					<img class="mx-auto mt-4 h-50 w-full outline" alt="" />
 				</div>
 				<div class="how-container">
 					<div class="flex flex-row items-center justify-start gap-6">
@@ -114,7 +115,7 @@
 					<p class="mt-2 leading-5 text-purple-darkest">
 						lorem ipsum dolor sit amet. i forgot the rest of it but it's okay..
 					</p>
-					<img class="mx-auto mt-4 h-[200px] w-full outline" alt="" />
+					<img class="mx-auto mt-4 h-50 w-full outline" alt="" />
 				</div>
 				<div class="how-container">
 					<div class="flex flex-row items-center justify-start gap-6">
@@ -131,7 +132,7 @@
 						>
 						You can use whatever you want, though!
 					</p>
-					<img class="mx-auto mt-4 h-[200px] w-full outline" alt="" />
+					<img class="mx-auto mt-4 h-50 w-full outline" alt="" />
 				</div>
 				<div class="how-container">
 					<div class="flex flex-row items-center justify-start gap-6">
@@ -141,7 +142,7 @@
 					<p class="mt-2 leading-5 text-purple-darkest">
 						lorem ipsum dolor sit amet. i forgot the rest of it but it's okay..
 					</p>
-					<img class="mx-auto mt-4 h-[200px] w-full outline" alt="" />
+					<img class="mx-auto mt-4 h-50 w-full outline" alt="" />
 				</div>
 				<div class="how-container">
 					<div class="flex flex-row items-center justify-start gap-6">
@@ -151,7 +152,7 @@
 					<p class="mt-2 leading-5 text-purple-darkest">
 						lorem ipsum dolor sit amet. i forgot the rest of it but it's okay..
 					</p>
-					<img class="mx-auto mt-4 h-[200px] w-full outline" alt="" />
+					<img class="mx-auto mt-4 h-50 w-full outline" alt="" />
 				</div>
 			</div>
 		</div>
@@ -172,47 +173,96 @@
 							<img
 								src={prize.src}
 								alt={prize.title}
-								class="m-4 w-full flex-1 rounded-sm object-contain"
+								class="m-4 min-h-0 w-full flex-1 rounded-sm object-contain"
 							/>
 							<p class="text-lg">{prize.hours}</p>
 						</div>
 					{/each}
 				</div>
-				{#each prizes as prize, i}
-					<div
-						class="prize-card flex flex-col items-center justify-between p-4 text-center"
-						style="background-color: {prizeColors[i % prizeColors.length].bg}; color: {prizeColors[
-							i % prizeColors.length
-						].text}"
-					>
-						<h1 class="mt-4 text-3xl underline">{prize.title}</h1>
-						<p class="mt-4 text-lg">{prize.description}</p>
-						<img
-							src={prize.src}
-							alt={prize.title}
-							class="m-4 w-full flex-1 rounded-sm object-contain"
-						/>
-						<p class="text-lg">{prize.hours}</p>
-					</div>
-				{/each}
+				<div class="prize-set" aria-hidden="true">
+					{#each prizes as prize, i}
+						<div
+							class="prize-card flex flex-col items-center justify-between p-4 text-center"
+							style="background-color: {prizeColors[i % prizeColors.length]
+								.bg}; color: {prizeColors[i % prizeColors.length].text}"
+						>
+							<h1 class="mt-4 text-3xl underline">{prize.title}</h1>
+							<p class="mt-4 text-lg">{prize.description}</p>
+							<img
+								src={prize.src}
+								alt={prize.title}
+								class="m-4 min-h-0 w-full flex-1 rounded-sm object-contain"
+							/>
+							<p class="text-lg">{prize.hours}</p>
+						</div>
+					{/each}
+				</div>
 			</div>
 		</div>
 		<!-- guides -->
-		<div class="guides w-full flex flex-col items-center justify-center gap-4 text-center">
-			<h2>we have step-by-step guides to help:</h2>
-			<div class="grid w-5/12 grid-cols-2">
+		<div class="guides flex w-full flex-col items-center justify-center gap-4 text-center">
+			<h2 class="text-glow text-2xl text-teal">we have step-by-step guides to help:</h2>
+			<div class="guides-grid m-6 grid w-1/2 grid-cols-2">
 				<div class="guide-container">
-					<p>hi</p>
-					<p>hi</p>
+					<img src="/cat.png" alt="" class="h-20 w-25" />
+					<div class="flex w-full flex-col gap-2 text-left">
+						<h1 class="text-xl leading-4">
+							How to Track Hours <i class="text-sm">(so you can get prizes!)</i>
+						</h1>
+						<p>by @Susan</p>
+					</div>
 				</div>
-				<div class="guide-container">2</div>
-				<div class="guide-container">3</div>
-				<div class="guide-container">4</div>
-				<div class="guide-container">5</div>
-				<div class="guide-container">6</div>
+				<div class="guide-container">
+					<img src="/cat.png" alt="" class="h-20 w-25" />
+					<div class="flex w-full flex-col gap-2 text-left">
+						<h1 class="text-xl leading-4">Storywriting Guide</h1>
+						<p>by @yunfei</p>
+					</div>
+				</div>
+				<div class="guide-container">
+					<img src="/cat.png" alt="" class="h-20 w-25" />
+					<div class="flex w-full flex-col gap-2 text-left">
+						<p class="text-sm">HOW TO CODE A VISUAL NOVEL</p>
+						<h1 class="text-xl leading-4">Ren'Py Quickstart Doc</h1>
+						<p>by @kat</p>
+					</div>
+				</div>
+				<div class="guide-container">
+					<img src="/cat.png" alt="" class="h-20 w-25" />
+					<div class="flex w-full flex-col gap-2 text-left">
+						<p class="text-sm">HOW TO CODE A VISUAL NOVEL</p>
+						<h1 class="text-xl leading-4">Ren'Py Quickstart Slide</h1>
+						<p>by @shyla</p>
+					</div>
+				</div>
+				<div class="guide-container">
+					<img src="/cat.png" alt="" class="h-20 w-25" />
+					<div class="flex w-full flex-col gap-2 text-left">
+						<h1 class="text-xl leading-4">...</h1>
+						<p>by @...</p>
+					</div>
+				</div>
+				<div class="guide-container">
+					<img src="/cat.png" alt="" class="h-20 w-25" />
+					<div class="flex w-full flex-col gap-2 text-left">
+						<h1 class="text-xl leading-4">...</h1>
+						<p>by @...</p>
+					</div>
+				</div>
 			</div>
-			<a href="placeholder">view more →</a>
-			<h2>and a collection of <a href="placeholder">free resources</a> for you to use! :)</h2>
+			<a
+				href="placeholder"
+				class="text-glow z-10 -mt-20 text-2xl text-yellow underline hover:decoration-wavy"
+				>view more →</a
+			>
+			<div class="collection">
+				<h2 class="text-glow z-10 my-8 text-2xl text-whiteish">
+					and a collection of <a
+						href="placeholder"
+						class="text-pink-purple underline hover:decoration-wavy">free resources</a
+					> for you to use! :)
+				</h2>
+			</div>
 		</div>
 	</div>
 </div>

@@ -76,6 +76,20 @@ button {
 	pointer-events: none;
 }
 
+.window {
+	position: relative;
+}
+
+.window::before {
+	content: '';
+	position: absolute;
+	inset-inline: 0;
+	bottom: 0;
+	height: 600px;
+	background-image: linear-gradient(to bottom, transparent 0%, var(--color-purple-darkest) 100%);
+	pointer-events: none;
+}
+
 /* how does storyboard work */
 
 .how-container {
@@ -149,6 +163,7 @@ button {
 	flex-wrap: nowrap;
 	align-items: center;
 	gap: 1rem;
+	padding-right: 1rem;
 }
 
 .prize-card {
@@ -166,6 +181,7 @@ button {
 	backdrop-filter: blur(8px);
 	transition: transform 200ms ease;
 	outline: 2px solid var(--color-purple-darkest);
+	overflow: hidden;
 }
 
 .prize-card::before {
@@ -178,7 +194,6 @@ button {
 
 .prize-card:nth-child(odd) {
 	transform: translateY(-24px) perspective(1000px) rotateX(-2deg) rotateY(-20deg);
-	margin: 0rem 3rem 2rem 0rem;
 }
 
 .prize-card:hover {
@@ -191,7 +206,7 @@ button {
 
 @keyframes prize-scroll {
 	to {
-		transform: translateX(-30%);
+		transform: translateX(-50%);
 	}
 }
 
@@ -205,9 +220,62 @@ button {
 
 .guide-container {
 	margin: 0.5rem;
-	padding: 1rem;
-	border: 1px solid black;
+	padding: 1.5rem;
+	background-color: color-mix(in srgb, var(--color-purple-mid) 50%, transparent);
+	backdrop-filter: blur(8px);
+	color: var(--color-yellow);
 	display: flex;
 	justify-content: start;
-	gap: 0.5rem;
+	align-items: center;
+	gap: 1.5rem;
+	transition: all;
+	transition-duration: 200ms;
+	outline: 1px solid #302865;
+	box-shadow: 0px 4px 4px color-mix(in srgb, var(--color-purple-darkest) 50%, transparent);
+}
+
+.guide-container:hover {
+	transform: scale(1.05, 1.05);
+	margin: 0.6rem;
+	box-shadow: 0px 8px 4px color-mix(in srgb, var(--color-purple-darkest) 50%, transparent);
+}
+
+.guides::before {
+	content: '';
+	position: absolute;
+	inset-inline: 0;
+	bottom: 0;
+	height: 950px;
+	background-image: linear-gradient(
+		to bottom,
+		transparent 0%,
+		color-mix(in srgb, var(--color-purple-darkest), transparent) 35%
+	);
+	pointer-events: none;
+}
+
+.guides-grid {
+	position: relative;
+}
+
+.guides-grid::after {
+	content: '';
+	position: absolute;
+	inset-inline: 0;
+	bottom: 0;
+	height: 250px;
+	background-image: linear-gradient(to bottom, transparent 0%, var(--color-purple-darkest) 100%);
+	pointer-events: none;
+}
+
+
+.collection::before {
+	content: '';
+	position: absolute;
+	inset-inline: 0;
+	bottom: 0;
+	height: 150px;
+	z-index: 0;
+	background-image: linear-gradient(to bottom, transparent 0%, black 100%);
+	pointer-events: none;
 }
