@@ -160,15 +160,19 @@ button {
 }
 
 .prize-track {
+	--duration: 26s;
+	--speed-factor: 0.5;
+	--animation-style: prize-scroll var(--duration) linear infinite;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	width: max-content;
-	animation: prize-scroll 26s linear infinite;
+	animation: var(--animation-style), prize-scroll calc(var(--duration) / var(--speed-factor)) linear infinite reverse paused;
+	animation-composition: add;
 }
 
 .prize-scroll:hover .prize-track {
-	animation-play-state: paused;
+	animation-play-state: running;
 }
 
 .prize-set {
