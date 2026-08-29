@@ -56,24 +56,39 @@
 </script>
 
 <div>
+	<!-- navbar -->
+	<div class="fixed top-0 z-20 flex w-screen items-center justify-between p-6 px-12 bg-black/50 backdrop-blur-xs navbar">
+		<a href="https://hackclub.com" target="_blank">
+			<img src="hc-flag.png" class="w-30 hover:scale-105 duration-200" />
+		</a>
+		<div class="flex gap-8">
+			<a class="text-3xl text-glow text-yellow hover:underline decoration-wavy" href="#how">about</a>
+			<a class="text-3xl text-glow text-yellow hover:underline decoration-wavy" href="#prizes">prizes</a>
+			<a class="text-3xl text-glow text-yellow hover:underline decoration-wavy" href="#FAQ">FAQ</a>
+			<a class="text-3xl text-glow text-teal hover:underline decoration-wavy" href="#hero"><i><b>sign up!</b></i></a>									
+		</div>
+	</div>
 	<!-- hero -->
 	<div
+		id="hero"
 		class="hero flex h-screen w-screen flex-col items-center justify-center gap-2 bg-[url('/bg-hero.png')] bg-cover"
 	>
 		<img
 			src="/logo-with-caption.png"
 			alt="hack club's storyboard: for teens 13-18"
-			class="m-4 w-1/3"
+			class="m-4 w-3/4 md:w-1/3"
 		/>
-		<h1 class="text-glow text-3xl text-teal">make a visual novel, get cool prizes!</h1>
-		<div class="m-6 flex w-1/2 flex-row items-center justify-center gap-4">
+		<h1 class="text-glow text-center text-2xl text-teal md:text-3xl">make a visual novel, get cool prizes!</h1>
+		<div class="m-6 flex w-full flex-col items-center justify-center gap-4 md:w-1/2 md:flex-row">
 			<input
-				type="text"
-				class="w-2/3 rounded-4xl bg-whiteish p-3 px-5 text-xl text-purple-mid outline-2 outline-purple-dark drop-shadow-sm drop-shadow-purple-darkest"
+				type="email"
+				name="email"
+				autocomplete="email"
+				class="w-4/5 rounded-4xl bg-whiteish p-3 px-5 text-xl text-purple-mid outline-2 outline-purple-dark drop-shadow-sm drop-shadow-purple-darkest md:w-2/3"
 				placeholder="your@email.com"
 			/>
 			<button
-				class="ok-btn rounded-4xl p-4 text-2xl outline outline-purple-darkest drop-shadow-sm drop-shadow-purple-darkest hover:drop-shadow-md hover:drop-shadow-purple-darkest"
+				class="ok-btn w-4/5 rounded-4xl p-4 text-2xl outline outline-purple-darkest drop-shadow-sm drop-shadow-purple-darkest hover:drop-shadow-md hover:drop-shadow-purple-darkest md:w-auto"
 				>OK!</button
 			>
 		</div>
@@ -83,10 +98,10 @@
 		class="window flex flex-col items-center justify-center gap-4 bg-purple-darkest bg-[url('/bg-window.png')] bg-cover text-center"
 	>
 		<!-- how it work? -->
-		<div class="flex flex-col items-center justify-center gap-4">
+		<div class="flex flex-col items-center justify-center gap-4" id="how">
 			<h1 class=" text-glow mt-16 text-4xl text-whiteish">HOW DOES STORYBOARD WORK?</h1>
 			<h2 class="text-glow m-4 text-2xl text-teal">learn how to make a visual novel...</h2>
-			<div class="grid w-2/3 grid-cols-3 grid-rows-2">
+			<div class="grid w-full grid-cols-1 md:w-2/3 md:grid-cols-3 md:grid-rows-2">
 				<div class="how-container">
 					<div class="flex flex-row items-center justify-start gap-6">
 						<div class="how-number bg-magenta">1</div>
@@ -157,7 +172,7 @@
 			</div>
 		</div>
 
-		<h2 class="prizes-text m-4 text-2xl text-white">...and we'll send you prizes!</h2>
+		<h2 class="prizes-text m-4 text-2xl text-white" id="prizes">...and we'll send you prizes!</h2>
 		<!-- scrolling prizes  -->
 		<div class="prize-scroll">
 			<div class="prize-track">
@@ -202,7 +217,7 @@
 		<!-- guides -->
 		<div class="guides flex w-full flex-col items-center justify-center gap-4 text-center">
 			<h2 class="text-glow text-2xl text-white"><b>we have step-by-step guides to help:</b></h2>
-			<div class="guides-grid m-6 grid w-1/2 grid-cols-2">
+			<div class="guides-grid m-6 grid w-full grid-cols-1 md:w-1/2 md:grid-cols-2">
 				<div class="guide-container">
 					<img src="/cat.png" alt="" class="h-20 w-25" />
 					<div class="flex w-full flex-col gap-2 text-left">
@@ -268,7 +283,7 @@
 </div>
 <!-- examples & faq -->
 <div
-	class="flex flex-col items-center justify-center gap-2 bg-black p-8 pt-24 text-center text-whiteish"
+	class="examples flex flex-col items-center justify-center gap-2 bg-black p-8 pt-16 text-center text-whiteish md:p-8 md:pt-24"
 >
 	<!-- examples -->
 	<!-- <div class="flex flex-col gap-4">
@@ -279,13 +294,13 @@
 			questions.
 		</p>
 		<!-- TV w projects - make a componentn later or sum -->
-		<!-- <div class="m-6 bg-teal/15 p-4"></div> -->
+	<!-- <div class="m-6 bg-teal/15 p-4"></div> -->
 	<!-- </div> -->
 	<!-- faq -->
-	<div class="flex flex-col gap-4 mb-12">
+	<div class="mb-12 flex flex-col gap-4" id="FAQ">
 		<h1 class="examples-text-gradient-blue m-4 text-4xl"><b>FAQ</b></h1>
 		<!-- (embed w renpy game) -->
-		<h2 class="text-xl m-2">
+		<h2 class="m-2 text-xl leading-loose">
 			More questions? ask in <a
 				href="placeholder"
 				class="mx-2 rounded-lg bg-linear-to-b from-purple-mid/30 to-purple-darkest/50 p-2 text-whiteish outline outline-purple-mid/60 duration-200 hover:rounded-xl hover:p-3 hover:underline"
@@ -299,7 +314,9 @@
 	</div>
 </div>
 <!-- footer -->
-<div class="flex flex-col items-center justify-center gap-2 bg-[#0C0C1B] p-18 text-center">
+<div
+	class="footer flex flex-col items-center justify-center gap-2 bg-[#0C0C1B] p-8 text-center md:p-18"
+>
 	<h1 class="text-2xl text-pink-purple">
 		made with <b class="text-4xl text-magenta">♡</b> by teens, for teens
 	</h1>
@@ -322,5 +339,10 @@
 			>code of conduct</a
 		>
 	</p>
-	<p class="text-xl text-pink-purple">this website is <a href="https://github.com/ikealoverkat/storyboard-v3" class="underline hover:decoration-wavy text-teal">open source!</a></p>
+	<p class="text-xl text-pink-purple">
+		this website is <a
+			href="https://github.com/ikealoverkat/storyboard-v3"
+			class="text-teal underline hover:decoration-wavy">open source!</a
+		>
+	</p>
 </div>
