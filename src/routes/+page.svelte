@@ -101,15 +101,22 @@
 
 <div>
 	<!-- navbar -->
-	<div class="fixed top-0 z-20 flex w-screen items-center justify-between p-6 px-12 bg-black/50 backdrop-blur-xs navbar">
+	<div
+		class="navbar fixed top-0 z-20 flex w-screen items-center justify-between bg-black/50 p-6 px-12 backdrop-blur-xs"
+	>
 		<a href="https://hackclub.com" target="_blank">
-			<img src="hc-flag.png" class="w-30 hover:scale-105 duration-200" />
+			<img src="hc-flag.png" class="w-30 duration-200 hover:scale-105" />
 		</a>
 		<div class="flex gap-8">
-			<a class="text-3xl text-glow text-yellow hover:underline decoration-wavy" href="#how">about</a>
-			<a class="text-3xl text-glow text-yellow hover:underline decoration-wavy" href="#prizes">prizes</a>
-			<a class="text-3xl text-glow text-yellow hover:underline decoration-wavy" href="#FAQ">FAQ</a>
-			<a class="text-3xl text-glow text-teal hover:underline decoration-wavy" href="#hero"><i><b>sign up!</b></i></a>									
+			<a class="text-glow text-3xl text-yellow decoration-wavy hover:underline" href="#how">about</a
+			>
+			<a class="text-glow text-3xl text-yellow decoration-wavy hover:underline" href="#prizes"
+				>prizes</a
+			>
+			<a class="text-glow text-3xl text-yellow decoration-wavy hover:underline" href="#FAQ">FAQ</a>
+			<a class="text-glow text-3xl text-teal decoration-wavy hover:underline" href="#hero"
+				><i><b>sign up!</b></i></a
+			>
 		</div>
 	</div>
 	<!-- hero -->
@@ -122,7 +129,9 @@
 			alt="hack club's storyboard: for teens 13-18"
 			class="m-4 w-3/4 md:w-1/3"
 		/>
-		<h1 class="text-glow text-center text-2xl text-teal md:text-3xl">make a visual novel, get cool prizes!</h1>
+		<h1 class="text-glow text-center text-2xl text-teal md:text-3xl">
+			make a visual novel, get cool prizes!
+		</h1>
 		<div class="m-6 flex w-full flex-col items-center justify-center gap-4 md:w-1/2 md:flex-row">
 			<input
 				type="email"
@@ -152,9 +161,13 @@
 						<h1 class="text-3xl text-purple-darkest">sign up!</h1>
 					</div>
 					<p class="mt-2 leading-5 text-purple-darkest">
-						lorem ipsum dolor sit amet. i forgot the rest of it but it's okay..
+						sign up w/email & make sure to join the
+						<a
+							href="https://slack.hackclub.com"
+							class="text-purple-mid underline hover:decoration-wavy">hack club slack!</a
+						>
 					</p>
-					<img class="mx-auto mt-4 h-50 w-full outline" alt="" />
+					<img class="mx-auto mt-4 w-full outline" alt="" src="/how_signup.png" />
 				</div>
 				<div class="how-container">
 					<div class="flex flex-row items-center justify-start gap-6">
@@ -162,9 +175,10 @@
 						<h1 class="text-3xl text-purple-darkest">write a story</h1>
 					</div>
 					<p class="mt-2 leading-5 text-purple-darkest">
-						lorem ipsum dolor sit amet. i forgot the rest of it but it's okay..
+						think of a project idea & write up characters, dialogue, and try to include lots of
+						interactive options.
 					</p>
-					<img class="mx-auto mt-4 h-50 w-full outline" alt="" />
+					<img class="mx-auto mt-4 w-full outline" alt="" src="/how_write.png" />
 				</div>
 				<div class="how-container">
 					<div class="flex flex-row items-center justify-start gap-6">
@@ -172,9 +186,9 @@
 						<h1 class="text-3xl text-purple-darkest">draw</h1>
 					</div>
 					<p class="mt-2 leading-5 text-purple-darkest">
-						lorem ipsum dolor sit amet. i forgot the rest of it but it's okay..
+						draw up sprites, backgrounds, logos, and other assets for your game!
 					</p>
-					<img class="mx-auto mt-4 h-50 w-full outline" alt="" />
+					<img class="mx-auto mt-4 w-full outline" alt="" src="/how_draw.png" />
 				</div>
 				<div class="how-container">
 					<div class="flex flex-row items-center justify-start gap-6">
@@ -191,7 +205,7 @@
 						>
 						You can use whatever you want, though!
 					</p>
-					<img class="mx-auto mt-4 h-50 w-full outline" alt="" />
+					<img class="mx-auto mt-4 w-full outline" alt="" src="/how_code.png" />
 				</div>
 				<div class="how-container">
 					<div class="flex flex-row items-center justify-start gap-6">
@@ -199,9 +213,13 @@
 						<h1 class="text-3xl text-purple-darkest">publish to itch.io</h1>
 					</div>
 					<p class="mt-2 leading-5 text-purple-darkest">
-						lorem ipsum dolor sit amet. i forgot the rest of it but it's okay..
+						upload your game to <a
+							href="https://itch.io"
+							target="_blank"
+							class="text-purple-mid underline hover:decoration-wavy">itch.io</a
+						> so anyone on the internet can play it!
 					</p>
-					<img class="mx-auto mt-4 h-50 w-full outline" alt="" />
+					<img class="mx-auto mt-4 w-full outline" alt="" src="/how_ship.png" />
 				</div>
 				<div class="how-container">
 					<div class="flex flex-row items-center justify-start gap-6">
@@ -209,9 +227,9 @@
 						<h1 class="text-3xl text-purple-darkest">submit for prize!!!</h1>
 					</div>
 					<p class="mt-2 leading-5 text-purple-darkest">
-						lorem ipsum dolor sit amet. i forgot the rest of it but it's okay..
+						CONGRATULATIONS!! submit your game to Storyboard, and get some super-cool hard-earned prizes :D 
 					</p>
-					<img class="mx-auto mt-4 h-50 w-full outline" alt="" />
+					<img class="mx-auto mt-4 w-full outline" alt="" src="/how_prize.png" />
 				</div>
 			</div>
 		</div>
@@ -228,30 +246,30 @@
 		>
 			<div class="prize-track" bind:this={trackRef}>
 				<div class="prize-set">
-						{#each prizes as prize, i}
-							<div
-								class="prize-card flex flex-col items-center justify-between p-4 text-center"
-								style="background-color: {prizeColors[i % prizeColors.length]
-									.bg}; color: {prizeColors[i % prizeColors.length].text}"
-							>
-								<h1 class="mt-4 text-3xl underline">{prize.title}</h1>
-								<p class="mt-4 text-lg">{prize.description}</p>
-								<img
-									src={prize.src}
-									alt={prize.title}
-									class="m-4 min-h-0 w-full flex-1 rounded-sm object-contain"
-								/>
-								<p class="text-lg">{prize.hours}</p>
-							</div>
-						{/each}
-					</div>
-					<div class="prize-set" aria-hidden="true">
-						{#each prizes as prize, i}
-							<div
-								class="prize-card flex flex-col items-center justify-between p-4 text-center"
-								style="background-color: {prizeColors[i % prizeColors.length]
-									.bg}; color: {prizeColors[i % prizeColors.length].text}"
-							>
+					{#each prizes as prize, i}
+						<div
+							class="prize-card flex flex-col items-center justify-between p-4 text-center"
+							style="background-color: {prizeColors[i % prizeColors.length]
+								.bg}; color: {prizeColors[i % prizeColors.length].text}"
+						>
+							<h1 class="mt-4 text-3xl underline">{prize.title}</h1>
+							<p class="mt-4 text-lg">{prize.description}</p>
+							<img
+								src={prize.src}
+								alt={prize.title}
+								class="m-4 min-h-0 w-full flex-1 rounded-sm object-contain"
+							/>
+							<p class="text-lg">{prize.hours}</p>
+						</div>
+					{/each}
+				</div>
+				<div class="prize-set" aria-hidden="true">
+					{#each prizes as prize, i}
+						<div
+							class="prize-card flex flex-col items-center justify-between p-4 text-center"
+							style="background-color: {prizeColors[i % prizeColors.length]
+								.bg}; color: {prizeColors[i % prizeColors.length].text}"
+						>
 							<h1 class="mt-4 text-3xl underline">{prize.title}</h1>
 							<p class="mt-4 text-lg">{prize.description}</p>
 							<img
