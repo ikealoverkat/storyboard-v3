@@ -6,6 +6,11 @@
 		src: string;
 	}
 
+	interface FAQItem {
+		question: string;
+		answer: string;
+	}
+
 	const prizes: Prize[] = [
 		{
 			title: 'Steam Dev License',
@@ -52,6 +57,31 @@
 		{ bg: 'var(--color-pink-purple)', text: 'var(--color-purple-darkest)' },
 		{ bg: 'var(--color-yellow)', text: 'var(--color-purple-darkest)' },
 		{ bg: 'var(--color-purple-mid)', text: 'var(--color-whiteish)' }
+	];
+
+	const faqs = [
+		{
+			question: 'Can I participate?',
+			answer: "If you're a teen from ages 13-18, yes you can! Storyboard is free!"
+		},
+		{
+			question: 'Do I need to know how to code & draw?',
+			answer:
+				'Nope! We encourage everyone - from experienced game developers & artists to absolute beginners - to participate in Storyboard.  Ren\u2019Py makes it easy to code, and there are tons of free drawing softwares (ex. Krita, Gimp, Kleki, ibisPaint X, Autodesk Sketchbook, LibreSprite, etc...) & tutorials online to help you get started. You can even team up with others!'
+		},
+		{
+			question: 'How do I track my hours?',
+			answer: 'Coding hours are tracked with Hackatime, and art hours are tracked with Lapse. Check out the "How to Track Hours" guide above if you\u2019re not sure how it works!'
+		},
+		{
+			question: 'What can I use to make my visual novel?',
+			answer:
+				'Anything! Ren\u2019Py is a great starting point, but you are free to use whatever you like.'
+		}, 
+		{
+			question: 'Do I NEED Slack? What even is Slack??',
+			answer: 'Yes! Slack is like Hack Club\u2019s Discord. Join to chat with loads of other teens who like to make projects, and recieve updates from the Storyboard team! :)'
+		}
 	];
 
 	import { onMount } from 'svelte';
@@ -201,7 +231,8 @@
 							target="_blank"
 							class="text-purple-mid underline hover:decoration-wavy">Ren'Py</a
 						>. Check out our
-						<a href="/placeholder" class="text-purple-mid underline hover:decoration-wavy">guides!</a
+						<a href="/placeholder" class="text-purple-mid underline hover:decoration-wavy"
+							>guides!</a
 						>
 						You can use whatever you want, though!
 					</p>
@@ -227,7 +258,8 @@
 						<h1 class="text-3xl text-purple-darkest">submit for prize!!!</h1>
 					</div>
 					<p class="mt-2 leading-5 text-purple-darkest">
-						CONGRATULATIONS!! submit your game to Storyboard, and get some super-cool hard-earned prizes :D 
+						CONGRATULATIONS!! submit your game to Storyboard, and get some super-cool hard-earned
+						prizes :D
 					</p>
 					<img class="mx-auto mt-4 w-full outline" alt="" src="/how_prize.png" />
 				</div>
@@ -366,10 +398,16 @@
 	<!-- <div class="m-6 bg-teal/15 p-4"></div> -->
 	<!-- </div> -->
 	<!-- faq -->
-	<div class="mb-12 flex flex-col gap-4" id="FAQ">
+	<div class="mb-12 flex w-full flex-col gap-4" id="FAQ">
 		<h1 class="examples-text-gradient-blue m-4 text-4xl"><b>FAQ</b></h1>
-		<!-- (embed w renpy game) -->
-		<h2 class="m-2 text-xl leading-loose">
+		{#each faqs as faq}
+			<details class="faq-item">
+				<summary>{faq.question}</summary>
+				<p class="faq-answer">{faq.answer}</p>
+			</details>
+		{/each}
+		<!-- (add embed w renpy game sometime) -->
+		<h2 class="m-8 text-xl leading-loose">
 			More questions? ask in <a
 				href="https://hackclub.enterprise.slack.com/archives/C09JZLBKS65"
 				class="mx-2 rounded-lg bg-linear-to-b from-purple-mid/30 to-purple-darkest/50 p-2 text-whiteish outline outline-purple-mid/60 duration-200 hover:rounded-xl hover:p-3 hover:underline"
@@ -390,7 +428,9 @@
 		made with <b class="text-4xl text-magenta">♡</b> by teens, for teens
 	</h1>
 	<!-- team -->
-	<div></div>
+	<div>
+		{#each teamMembers as member} {/each}
+	</div>
 	<p class="text-xl text-pink-purple">
 		<a href="https://hackclub.com" target="_blank" class="hover:decration-wavy underline"
 			>hack club</a
