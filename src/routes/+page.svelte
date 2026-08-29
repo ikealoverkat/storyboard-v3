@@ -105,7 +105,7 @@
 		class="navbar fixed top-0 z-20 flex w-screen items-center justify-between bg-black/50 p-6 px-12 backdrop-blur-xs"
 	>
 		<a href="https://hackclub.com" target="_blank">
-			<img src="hc-flag.png" class="w-30 duration-200 hover:scale-105" />
+			<img src="hc-flag.png" class="w-30 duration-200 hover:scale-105" alt="hack club flag" />
 		</a>
 		<div class="flex gap-8">
 			<a class="text-glow text-3xl text-yellow decoration-wavy hover:underline" href="#how">about</a
@@ -201,7 +201,7 @@
 							target="_blank"
 							class="text-purple-mid underline hover:decoration-wavy">Ren'Py</a
 						>. Check out our
-						<a href="placeholder" class="text-purple-mid underline hover:decoration-wavy">guides!</a
+						<a href="/placeholder" class="text-purple-mid underline hover:decoration-wavy">guides!</a
 						>
 						You can use whatever you want, though!
 					</p>
@@ -342,7 +342,7 @@
 			<div class="collection mt-12">
 				<h2 class="text-glow z-10 my-8 text-2xl text-whiteish">
 					and a collection of <a
-						href="placeholder"
+						href="/placeholder"
 						class="text-pink-purple underline hover:decoration-wavy">free resources</a
 					> for you to use! :)
 				</h2>
@@ -359,7 +359,7 @@
 		<h1 class="m-4 text-3xl text-teal">example projects</h1>
 		<p class="examples-text-gradient-pink text-xl">
 			Look at these cool projects other Storyboarders have made & get inspired!
-			<br />Stuck on ideas? explore the <a href="placeholder">#storyboard</a> channel & feel free to ask
+			<br />Stuck on ideas? explore the <a href="/placeholder">#storyboard</a> channel & feel free to ask
 			questions.
 		</p>
 		<!-- TV w projects - make a componentn later or sum -->
@@ -371,7 +371,7 @@
 		<!-- (embed w renpy game) -->
 		<h2 class="m-2 text-xl leading-loose">
 			More questions? ask in <a
-				href="placeholder"
+				href="https://hackclub.enterprise.slack.com/archives/C09JZLBKS65"
 				class="mx-2 rounded-lg bg-linear-to-b from-purple-mid/30 to-purple-darkest/50 p-2 text-whiteish outline outline-purple-mid/60 duration-200 hover:rounded-xl hover:p-3 hover:underline"
 				>#storyboard-help</a
 			>

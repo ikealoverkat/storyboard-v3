@@ -2,6 +2,11 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 5rem;
+}
+
 @theme {
 	--color-purple-darkest: #302865;
 	--color-purple-mid: #5d5cce;
