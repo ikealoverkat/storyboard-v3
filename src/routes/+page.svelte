@@ -11,6 +11,30 @@
 		answer: string;
 	}
 
+	interface teamMember {
+		name: string,
+		src: string,
+		link: string
+	}
+
+	const teamMembers: teamMember[] = [
+		{
+			name: 'kat wang',
+			src: '/pfp_kat.png',
+			link: 'https://kat.wang'
+		}, 
+		{
+			name: 'kaylee dinh',
+			src: '/pfp_kaylee.png',
+			link: 'https://github.com/kaylz-d'
+		}, 
+		{
+			name: 'yunfei shuai',
+			src: '/pfp_yunfei.png',
+			link: 'https://small-n-stupid.vercel.app/'
+		}, 				
+	]
+
 	const prizes: Prize[] = [
 		{
 			title: 'Steam Dev License',
@@ -59,7 +83,7 @@
 		{ bg: 'var(--color-purple-mid)', text: 'var(--color-whiteish)' }
 	];
 
-	const faqs = [
+	const faqs: FAQItem[] = [
 		{
 			question: 'Can I participate?',
 			answer: "If you're a teen from ages 13-18, yes you can! Storyboard is free!"
@@ -428,8 +452,13 @@
 		made with <b class="text-4xl text-magenta">♡</b> by teens, for teens
 	</h1>
 	<!-- team -->
-	<div>
-		{#each teamMembers as member} {/each}
+	<div class="flex flex-row gap-2 m-6 duration-200">
+		{#each teamMembers as member}
+			<div class="flex flex-col mx-2 group transition-all duration-200 hover:scale-110">
+				<img src={member.src} alt={member.name} class="outline outline-whiteish mb-2 rounded-[4rem] w-20 h-20 object-cover">
+				<p class="caption-fadein group-hover:block hidden text-whiteish">{member.name}</p>
+			</div>
+		{/each}
 	</div>
 	<p class="text-xl text-pink-purple">
 		<a href="https://hackclub.com" target="_blank" class="hover:decration-wavy underline"

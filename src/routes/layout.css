@@ -377,8 +377,13 @@ button {
 	background-color: color-mix(in srgb, var(--color-purple-darkest) 55%, transparent);
 	backdrop-filter: blur(8px);
 	outline: 1px solid color-mix(in srgb, var(--color-purple-mid) 60%, transparent);
-	border-radius: 0.75rem;
+	border-radius: 1.75rem;
 	text-align: left;
+	transition-duration: 200ms;
+}
+
+.faq-item:hover {
+	transform: scale(1.02, 1.02);
 }
 
 .faq-item summary {
@@ -417,4 +422,21 @@ button {
 	line-height: 1.5;
 	color: var(--color-whiteish);
 	opacity: 0.85;
+}
+
+/* footer */
+
+.caption-fadein {
+	animation: fadein 0.2s forwards linear;
+}
+
+@keyframes fadein {
+	0% {
+		transform: translateY(-10px);
+		opacity: 0%;
+	}
+	100% {
+		transform: translateY(0px);
+		opacity: 100%;
+	}
 }
