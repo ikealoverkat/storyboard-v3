@@ -3,16 +3,22 @@
 
 <div>
 	<!-- hero -->
-	<div class="flex h-screen w-screen flex-col items-center justify-center gap-2">
+	<div
+		class="flex h-screen w-screen flex-col items-center justify-center gap-2 bg-[url('/bg-hero.png')] bg-cover"
+	>
 		<img
 			src="/logo-with-caption.png"
 			alt="hack club's storyboard: for teens 13-18"
 			class="m-4 w-1/3"
 		/>
-		<h1>make a visual novel, get cool prizes!</h1>
-		<div>
-			<input type="text" class="outline" />
-			<button>OK!</button>
+		<h1 class="text-glow text-3xl text-teal">make a visual novel, get cool prizes!</h1>
+		<div class="m-6 flex w-1/2 flex-row items-center justify-center gap-4">
+			<input
+				type="text"
+				class="w-2/3 rounded-4xl bg-whiteish p-3 px-5 text-xl outline-2 outline-purple-dark drop-shadow-sm drop-shadow-purple-darkest text-purple-mid"
+				placeholder="your@email.com"
+			/>
+			<button class="ok-btn p-4 text-2xl outline rounded-4xl outline-purple-darkest drop-shadow-sm hover:drop-shadow-md hover:drop-shadow-purple-darkest drop-shadow-purple-darkest">OK!</button>
 		</div>
 	</div>
 	<!-- how does storyboard work? -->
@@ -46,7 +52,7 @@
 		<h2>and a collection of <a href="placeholder">free resources</a> for you to use! :)</h2>
 	</div>
 	<!-- examples & faq -->
-	<div class="flex flex-col gap-2 items-center justify-center text-center">
+	<div class="flex flex-col items-center justify-center gap-2 text-center">
 		<!-- examples -->
 		<div>
 			<h1>example projects</h1>
@@ -67,7 +73,7 @@
 		</div>
 	</div>
 	<!-- footer -->
-	<div class="flex flex-col gap-2 items-center justify-center text-center">
+	<div class="flex flex-col items-center justify-center gap-2 text-center">
 		<h1>made with ♡ by teens, for teens</h1>
 		<!-- team -->
 		<div></div>
