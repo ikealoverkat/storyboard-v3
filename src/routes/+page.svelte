@@ -267,35 +267,60 @@
 	</div>
 </div>
 <!-- examples & faq -->
-<div class="bg-black pt-24 p-8 text-whiteish flex flex-col items-center justify-center gap-2 text-center">
+<div
+	class="flex flex-col items-center justify-center gap-2 bg-black p-8 pt-24 text-center text-whiteish"
+>
 	<!-- examples -->
-	<div>
-		<h1>example projects</h1>
-		<p>Look at these cool projects other Storyboarders have made & get inspired!
-		<br>Stuck on ideas? explore the <a href="placeholder">#storyboard</a> channel & feel free to
-		ask questions.</p>
+	<!-- <div class="flex flex-col gap-4">
+		<h1 class="m-4 text-3xl text-teal">example projects</h1>
+		<p class="examples-text-gradient-pink text-xl">
+			Look at these cool projects other Storyboarders have made & get inspired!
+			<br />Stuck on ideas? explore the <a href="placeholder">#storyboard</a> channel & feel free to ask
+			questions.
+		</p>
 		<!-- TV w projects - make a componentn later or sum -->
-		<div></div>
-	</div>
+		<!-- <div class="m-6 bg-teal/15 p-4"></div> -->
+	<!-- </div> -->
 	<!-- faq -->
-	<div>
-		<h1>FAQ</h1>
+	<div class="flex flex-col gap-4 mb-12">
+		<h1 class="examples-text-gradient-blue m-4 text-4xl"><b>FAQ</b></h1>
 		<!-- (embed w renpy game) -->
-		<h2>
-			More questions? ask in <a href="placeholder">#storyboard-help</a> or email
-			<a href="mailto:kat@hackclub.com">kat@hackclub.com</a>
+		<h2 class="text-xl m-2">
+			More questions? ask in <a
+				href="placeholder"
+				class="mx-2 rounded-lg bg-linear-to-b from-purple-mid/30 to-purple-darkest/50 p-2 text-whiteish outline outline-purple-mid/60 duration-200 hover:rounded-xl hover:p-3 hover:underline"
+				>#storyboard-help</a
+			>
+			or email
+			<a href="mailto:kat@hackclub.com" class="text-pink-purple underline hover:decoration-wavy"
+				>kat@hackclub.com</a
+			>
 		</h2>
 	</div>
 </div>
 <!-- footer -->
-<div class="flex flex-col items-center justify-center gap-2 text-center">
-	<h1>made with ♡ by teens, for teens</h1>
+<div class="flex flex-col items-center justify-center gap-2 bg-[#0C0C1B] p-18 text-center">
+	<h1 class="text-2xl text-pink-purple">
+		made with <b class="text-4xl text-magenta">♡</b> by teens, for teens
+	</h1>
 	<!-- team -->
 	<div></div>
-	<p>
-		<a href="https://hackclub.com">hack club</a> ✦ <a href="https://slack.hackclub.com">slack</a>
-		✦ <a href="https://clubs.hackclub.com">clubs</a> ✦
-		<a href="https://conduct.hackclub.com">code of conduct</a>
+	<p class="text-xl text-pink-purple">
+		<a href="https://hackclub.com" target="_blank" class="hover:decration-wavy underline"
+			>hack club</a
+		>
+		✦
+		<a href="https://slack.hackclub.com" target="_blank" class="hover:decration-wavy underline"
+			>slack</a
+		>
+		✦
+		<a href="https://clubs.hackclub.com" target="_blank" class="hover:decration-wavy underline"
+			>clubs</a
+		>
+		✦
+		<a href="https://conduct.hackclub.com" target="_blank" class="hover:decration-wavy underline"
+			>code of conduct</a
+		>
 	</p>
-	<p>this website is <a href="https://github.com/ikealoverkat/storyboard-v3">open source!</a></p>
+	<p class="text-xl text-pink-purple">this website is <a href="https://github.com/ikealoverkat/storyboard-v3" class="underline hover:decoration-wavy text-teal">open source!</a></p>
 </div>

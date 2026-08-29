@@ -216,6 +216,58 @@ button {
 	}
 }
 
+@media (max-width: 768px) {
+	.prizes-text {
+		margin: 2rem;
+	}
+
+	.prize-scroll {
+		padding: 1.5rem 0 3rem;
+	}
+
+	.prize-track {
+		animation-duration: 18s;
+	}
+
+	.prize-set {
+		gap: 0.5rem;
+		padding-right: 0.5rem;
+	}
+
+	.prize-card {
+		width: min(220px, 62vw);
+		font-size: 1.25rem;
+		transform: perspective(900px) rotateX(2deg) rotateY(12deg);
+		outline-width: 1px;
+	}
+
+	.prize-card:nth-child(odd) {
+		transform: translateY(-12px) perspective(900px) rotateX(-2deg) rotateY(-12deg);
+	}
+
+	.prize-card:hover {
+		transform: perspective(900px) rotateX(0deg) rotateY(3deg);
+	}
+
+	.prize-card:nth-child(odd):hover {
+		transform: translateY(-12px) perspective(900px) rotateX(0deg) rotateY(-3deg);
+	}
+
+	.prize-card h1 {
+		font-size: 1.25rem;
+		margin-top: 0.5rem;
+	}
+
+	.prize-card p {
+		font-size: 0.85rem;
+		margin-top: 0.5rem;
+	}
+
+	.prize-card img {
+		margin: 0.5rem;
+	}
+}
+
 /* we have stepbystep guides to help */
 
 .guide-container {
@@ -268,7 +320,6 @@ button {
 	pointer-events: none;
 }
 
-
 .collection::before {
 	content: '';
 	position: absolute;
@@ -278,4 +329,22 @@ button {
 	z-index: 0;
 	background-image: linear-gradient(to bottom, transparent 0%, black 100%);
 	pointer-events: none;
+}
+
+/* example project section */
+
+.examples-text-gradient-pink {
+	background: linear-gradient(to right, var(--color-whiteish), var(--color-pink-purple));
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+}
+
+.examples-text-gradient-blue {
+	background: linear-gradient(to bottom, var(--color-teal) 5%, var(--color-purple-mid));
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
 }
