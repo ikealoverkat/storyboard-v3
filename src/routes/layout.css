@@ -160,19 +160,11 @@ button {
 }
 
 .prize-track {
-	--duration: 26s;
-	--speed-factor: 0.5;
-	--animation-style: prize-scroll var(--duration) linear infinite;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	width: max-content;
-	animation: var(--animation-style), prize-scroll calc(var(--duration) / var(--speed-factor)) linear infinite reverse paused;
-	animation-composition: add;
-}
-
-.prize-scroll:hover .prize-track {
-	animation-play-state: running;
+	will-change: transform;
 }
 
 .prize-set {
@@ -222,18 +214,6 @@ button {
 	transform: translateY(-24px) perspective(1000px) rotateX(0deg) rotateY(-5deg);
 }
 
-@keyframes prize-scroll {
-	to {
-		transform: translateX(-50%);
-	}
-}
-
-@media (prefers-reduced-motion: reduce) {
-	.prize-track {
-		animation: none;
-	}
-}
-
 @media (max-width: 768px) {
 	.hero,
 	.window,
@@ -262,10 +242,6 @@ button {
 
 	.prize-scroll {
 		padding: 1.5rem 0 3rem;
-	}
-
-	.prize-track {
-		animation-duration: 12s;
 	}
 
 	.prize-set {

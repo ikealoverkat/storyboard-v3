@@ -53,6 +53,50 @@
 		{ bg: 'var(--color-yellow)', text: 'var(--color-purple-darkest)' },
 		{ bg: 'var(--color-purple-mid)', text: 'var(--color-whiteish)' }
 	];
+
+	import { onMount } from 'svelte';
+
+	let scrollRef: HTMLElement | undefined;
+	let trackRef: HTMLElement | undefined;
+	let hovering = false;
+
+	onMount(() => {
+		const track = trackRef!;
+		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+		const setEl = track.firstElementChild as HTMLElement;
+		let setWidth = setEl.offsetWidth;
+		const ro = new ResizeObserver(() => {
+			setWidth = setEl.offsetWidth;
+		});
+		ro.observe(setEl);
+
+		const BASE_SPEED = 90;
+		const HOVER_SPEED = 28;
+		let speed = BASE_SPEED;
+		let pos = 0;
+		let last = performance.now();
+		let raf = requestAnimationFrame(frame);
+
+		function frame(now: number) {
+			const dt = Math.min((now - last) / 1000, 0.1);
+			last = now;
+
+			const target = hovering ? HOVER_SPEED : BASE_SPEED;
+			speed += (target - speed) * Math.min(1, dt * 4);
+
+			pos -= speed * dt;
+			if (pos <= -setWidth) pos += setWidth;
+			track.style.transform = `translate3d(${pos}px, 0, 0)`;
+
+			raf = requestAnimationFrame(frame);
+		}
+
+		return () => {
+			cancelAnimationFrame(raf);
+			ro.disconnect();
+		};
+	});
 </script>
 
 <div>
@@ -174,33 +218,40 @@
 
 		<h2 class="prizes-text m-4 text-2xl text-white" id="prizes">...and we'll send you prizes!</h2>
 		<!-- scrolling prizes  -->
-		<div class="prize-scroll">
-			<div class="prize-track">
+		<div
+			class="prize-scroll"
+			bind:this={scrollRef}
+			role="region"
+			aria-label="prizes"
+			onmouseenter={() => (hovering = true)}
+			onmouseleave={() => (hovering = false)}
+		>
+			<div class="prize-track" bind:this={trackRef}>
 				<div class="prize-set">
-					{#each prizes as prize, i}
-						<div
-							class="prize-card flex flex-col items-center justify-between p-4 text-center"
-							style="background-color: {prizeColors[i % prizeColors.length]
-								.bg}; color: {prizeColors[i % prizeColors.length].text}"
-						>
-							<h1 class="mt-4 text-3xl underline">{prize.title}</h1>
-							<p class="mt-4 text-lg">{prize.description}</p>
-							<img
-								src={prize.src}
-								alt={prize.title}
-								class="m-4 min-h-0 w-full flex-1 rounded-sm object-contain"
-							/>
-							<p class="text-lg">{prize.hours}</p>
-						</div>
-					{/each}
-				</div>
-				<div class="prize-set" aria-hidden="true">
-					{#each prizes as prize, i}
-						<div
-							class="prize-card flex flex-col items-center justify-between p-4 text-center"
-							style="background-color: {prizeColors[i % prizeColors.length]
-								.bg}; color: {prizeColors[i % prizeColors.length].text}"
-						>
+						{#each prizes as prize, i}
+							<div
+								class="prize-card flex flex-col items-center justify-between p-4 text-center"
+								style="background-color: {prizeColors[i % prizeColors.length]
+									.bg}; color: {prizeColors[i % prizeColors.length].text}"
+							>
+								<h1 class="mt-4 text-3xl underline">{prize.title}</h1>
+								<p class="mt-4 text-lg">{prize.description}</p>
+								<img
+									src={prize.src}
+									alt={prize.title}
+									class="m-4 min-h-0 w-full flex-1 rounded-sm object-contain"
+								/>
+								<p class="text-lg">{prize.hours}</p>
+							</div>
+						{/each}
+					</div>
+					<div class="prize-set" aria-hidden="true">
+						{#each prizes as prize, i}
+							<div
+								class="prize-card flex flex-col items-center justify-between p-4 text-center"
+								style="background-color: {prizeColors[i % prizeColors.length]
+									.bg}; color: {prizeColors[i % prizeColors.length].text}"
+							>
 							<h1 class="mt-4 text-3xl underline">{prize.title}</h1>
 							<p class="mt-4 text-lg">{prize.description}</p>
 							<img
