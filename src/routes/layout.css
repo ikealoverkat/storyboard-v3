@@ -221,7 +221,7 @@ button {
 .guide-container {
 	margin: 0.5rem;
 	padding: 1.5rem;
-	background-color: color-mix(in srgb, var(--color-purple-mid) 50%, transparent);
+	background-color: color-mix(in srgb, black 50%, transparent);
 	backdrop-filter: blur(8px);
 	color: var(--color-yellow);
 	display: flex;
@@ -274,7 +274,7 @@ button {
 	position: absolute;
 	inset-inline: 0;
 	bottom: 0;
-	height: 150px;
+	height: 250px;
 	z-index: 0;
 	background-image: linear-gradient(to bottom, transparent 0%, black 100%);
 	pointer-events: none;

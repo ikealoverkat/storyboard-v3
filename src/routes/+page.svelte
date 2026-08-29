@@ -201,7 +201,7 @@
 		</div>
 		<!-- guides -->
 		<div class="guides flex w-full flex-col items-center justify-center gap-4 text-center">
-			<h2 class="text-glow text-2xl text-teal">we have step-by-step guides to help:</h2>
+			<h2 class="text-glow text-2xl text-white"><b>we have step-by-step guides to help:</b></h2>
 			<div class="guides-grid m-6 grid w-1/2 grid-cols-2">
 				<div class="guide-container">
 					<img src="/cat.png" alt="" class="h-20 w-25" />
@@ -255,7 +255,7 @@
 				class="text-glow z-10 -mt-20 text-2xl text-yellow underline hover:decoration-wavy"
 				>view more →</a
 			>
-			<div class="collection">
+			<div class="collection mt-12">
 				<h2 class="text-glow z-10 my-8 text-2xl text-whiteish">
 					and a collection of <a
 						href="placeholder"
@@ -267,13 +267,13 @@
 	</div>
 </div>
 <!-- examples & faq -->
-<div class="flex flex-col items-center justify-center gap-2 text-center">
+<div class="bg-black pt-24 p-8 text-whiteish flex flex-col items-center justify-center gap-2 text-center">
 	<!-- examples -->
 	<div>
 		<h1>example projects</h1>
-		<p>Look at these cool projects other Storyboarders have made & get inspired!</p>
-		<br />Stuck on ideas? explore the <a href="placeholder">#storyboard</a> channel & feel free to
-		ask questions.
+		<p>Look at these cool projects other Storyboarders have made & get inspired!
+		<br>Stuck on ideas? explore the <a href="placeholder">#storyboard</a> channel & feel free to
+		ask questions.</p>
 		<!-- TV w projects - make a componentn later or sum -->
 		<div></div>
 	</div>
