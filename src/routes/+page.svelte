@@ -1,4 +1,57 @@
 <script lang="ts">
+	interface Prize {
+		title: string;
+		hours: string;
+		description: string;
+		src: string;
+	}
+	const prizes: Prize[] = [
+		{
+			title: 'Steam Dev License',
+			hours: '30 hours',
+			description: 'upload your game to steam!!! get big money?',
+			src: '/prizes/steamlicense.jpg'
+		},
+		{
+			title: 'Hoodie? 👀👀👀👀👀',
+			hours: '15 hours',
+			description: 'sparkly shiny and theres a funny cat too',
+			src: '/prizes/hoodie.png'
+		},
+		{
+			title: 'Drawing Tablet',
+			hours: '50 hours',
+			description: 'draw a visual novel & get a drawing tablet to... draw more visual novels',
+			src: '/prizes/drawingtablet.webp'
+		},
+		{
+			title: 'Fat Cat Plushie',
+			hours: '15 hours',
+			description: 'SOO CUTE',
+			src: '/prizes/plushie.jpg'
+		},
+		{
+			title: 'Stickers',
+			hours: '1 hour',
+			description: 'cool stickers drawn by the supercoolawesome storyboard team!',
+			src: '/prizes/stickersheet.png'
+		},
+		{
+			title: 'Keyboard',
+			hours: '20 hours',
+			description: 'click click clack clack',
+			src: '/prizes/steamlicense.jpg'
+		}
+	];
+
+	const prizeColors = [
+		{ bg: 'var(--color-magenta)', text: 'var(--color-whiteish)' },
+		{ bg: 'var(--color-blue)', text: 'var(--color-whiteish)' },
+		{ bg: 'var(--color-teal)', text: 'var(--color-purple-darkest)' },
+		{ bg: 'var(--color-pink-purple)', text: 'var(--color-purple-darkest)' },
+		{ bg: 'var(--color-yellow)', text: 'var(--color-purple-darkest)' },
+		{ bg: 'var(--color-purple-mid)', text: 'var(--color-whiteish)' }
+	];
 </script>
 
 <div>
@@ -24,143 +77,175 @@
 			>
 		</div>
 	</div>
-	<!-- how does storyboard work? -->
+	<!-- windows -->
 	<div
-		class="flex flex-col items-center justify-center gap-4 bg-purple-darkest bg-[url('/bg-window.png')] bg-cover p-12 text-center"
+		class="flex flex-col items-center justify-center gap-4 bg-purple-darkest bg-[url('/bg-window.png')] bg-cover text-center"
 	>
-		<h1 class="text-glow text-4xl text-whiteish">HOW DOES STORYBOARD WORK?</h1>
-		<h2 class="text-glow m-4 text-2xl text-teal">learn how to make a visual novel...</h2>
-		<div class="grid w-2/3 grid-cols-3 grid-rows-2">
-			<div class="how-container">
-				<div class="flex flex-row items-center justify-start gap-6">
-					<div class="how-number bg-magenta">1</div>
-					<h1 class="text-3xl text-purple-darkest">sign up!</h1>
+		<!-- how it work? -->
+		<div class="flex flex-col items-center justify-center gap-4">
+			<h1 class=" text-glow mt-16 text-4xl text-whiteish">HOW DOES STORYBOARD WORK?</h1>
+			<h2 class="text-glow m-4 text-2xl text-teal">learn how to make a visual novel...</h2>
+			<div class="grid w-2/3 grid-cols-3 grid-rows-2">
+				<div class="how-container">
+					<div class="flex flex-row items-center justify-start gap-6">
+						<div class="how-number bg-magenta">1</div>
+						<h1 class="text-3xl text-purple-darkest">sign up!</h1>
+					</div>
+					<p class="mt-2 leading-5 text-purple-darkest">
+						lorem ipsum dolor sit amet. i forgot the rest of it but it's okay..
+					</p>
+					<img class="mx-auto mt-4 h-[200px] w-full outline" alt="" />
 				</div>
-				<p class="mt-2 leading-5 text-purple-darkest">
-					lorem ipsum dolor sit amet. i forgot the rest of it but it's okay..
-				</p>
-				<img class="mx-auto mt-4 h-[200px] w-full outline" />
-			</div>
-			<div class="how-container">
-				<div class="flex flex-row items-center justify-start gap-6">
-					<div class="how-number bg-teal">2</div>
-					<h1 class="text-3xl text-purple-darkest">write a story</h1>
+				<div class="how-container">
+					<div class="flex flex-row items-center justify-start gap-6">
+						<div class="how-number bg-teal">2</div>
+						<h1 class="text-3xl text-purple-darkest">write a story</h1>
+					</div>
+					<p class="mt-2 leading-5 text-purple-darkest">
+						lorem ipsum dolor sit amet. i forgot the rest of it but it's okay..
+					</p>
+					<img class="mx-auto mt-4 h-[200px] w-full outline" />
 				</div>
-				<p class="mt-2 leading-5 text-purple-darkest">
-					lorem ipsum dolor sit amet. i forgot the rest of it but it's okay..
-				</p>
-				<img class="mx-auto mt-4 h-[200px] w-full outline" />
-			</div>
-			<div class="how-container">
-				<div class="flex flex-row items-center justify-start gap-6">
-					<div class="how-number bg-yellow">3</div>
-					<h1 class="text-3xl text-purple-darkest">draw</h1>
+				<div class="how-container">
+					<div class="flex flex-row items-center justify-start gap-6">
+						<div class="how-number bg-yellow">3</div>
+						<h1 class="text-3xl text-purple-darkest">draw</h1>
+					</div>
+					<p class="mt-2 leading-5 text-purple-darkest">
+						lorem ipsum dolor sit amet. i forgot the rest of it but it's okay..
+					</p>
+					<img class="mx-auto mt-4 h-[200px] w-full outline" alt="" />
 				</div>
-				<p class="mt-2 leading-5 text-purple-darkest">
-					lorem ipsum dolor sit amet. i forgot the rest of it but it's okay..
-				</p>
-				<img class="mx-auto mt-4 h-[200px] w-full outline" />
-			</div>
-			<div class="how-container">
-				<div class="flex flex-row items-center justify-start gap-6">
-					<div class="how-number bg-blue">4</div>
-					<h1 class="text-3xl text-purple-darkest">code</h1>
+				<div class="how-container">
+					<div class="flex flex-row items-center justify-start gap-6">
+						<div class="how-number bg-blue">4</div>
+						<h1 class="text-3xl text-purple-darkest">code</h1>
+					</div>
+					<p class="mt-2 leading-5 text-purple-darkest">
+						First ever coding project? We reccomend using <a
+							href="https://www.renpy.org/"
+							target="_blank"
+							class="text-purple-mid underline hover:decoration-wavy">Ren'Py</a
+						>. Check out our
+						<a href="placeholder" class="text-purple-mid underline hover:decoration-wavy">guides!</a
+						>
+						You can use whatever you want, though!
+					</p>
+					<img class="mx-auto mt-4 h-[200px] w-full outline" alt="" />
 				</div>
-				<p class="mt-2 leading-5 text-purple-darkest">
-					First ever coding project? We reccomend using <a href="https://www.renpy.org/" target="_blank" class="underline hover:decoration-wavy text-purple-mid">Ren'Py</a>. Check out our <a href="placeholder" class="underline hover:decoration-wavy text-purple-mid">guides!</a>
-					You can use whatever you want, though!
-				</p>
-				<img class="mx-auto mt-4 h-[200px] w-full outline" />
-			</div>
-			<div class="how-container">
-				<div class="flex flex-row items-center justify-start gap-6">
-					<div class="how-number bg-pink-purple">5</div>
-					<h1 class="text-3xl text-purple-darkest">publish to itch.io</h1>
+				<div class="how-container">
+					<div class="flex flex-row items-center justify-start gap-6">
+						<div class="how-number bg-pink-purple">5</div>
+						<h1 class="text-3xl text-purple-darkest">publish to itch.io</h1>
+					</div>
+					<p class="mt-2 leading-5 text-purple-darkest">
+						lorem ipsum dolor sit amet. i forgot the rest of it but it's okay..
+					</p>
+					<img class="mx-auto mt-4 h-[200px] w-full outline" alt="" />
 				</div>
-				<p class="mt-2 leading-5 text-purple-darkest">
-					lorem ipsum dolor sit amet. i forgot the rest of it but it's okay..
-				</p>
-				<img class="mx-auto mt-4 h-[200px] w-full outline" />
-			</div>
-			<div class="how-container">
-				<div class="flex flex-row items-center justify-start gap-6">
-					<div class="how-number bg-[#b2b1f0]">6</div>
-					<h1 class="text-3xl text-purple-darkest">submit for prize!!!</h1>
+				<div class="how-container">
+					<div class="flex flex-row items-center justify-start gap-6">
+						<div class="how-number bg-[#b2b1f0]">6</div>
+						<h1 class="text-3xl text-purple-darkest">submit for prize!!!</h1>
+					</div>
+					<p class="mt-2 leading-5 text-purple-darkest">
+						lorem ipsum dolor sit amet. i forgot the rest of it but it's okay..
+					</p>
+					<img class="mx-auto mt-4 h-[200px] w-full outline" alt="" />
 				</div>
-				<p class="mt-2 leading-5 text-purple-darkest">
-					lorem ipsum dolor sit amet. i forgot the rest of it but it's okay..
-				</p>
-				<img class="mx-auto mt-4 h-[200px] w-full outline" />
 			</div>
 		</div>
-		<h2 class="text-2xl m-4 text-white prizes-text">...and we'll send you prizes!</h2>
-		<!-- scrolling prizes add them later tho -->
+
+		<h2 class="prizes-text m-4 text-2xl text-white">...and we'll send you prizes!</h2>
+		<!-- scrolling prizes  -->
 		<div class="prize-scroll">
 			<div class="prize-track">
 				<div class="prize-set">
-					<div class="prize-card bg-magenta text-whiteish">prize 1</div>
-					<div class="prize-card bg-blue text-whiteish">prize 2</div>
-					<div class="prize-card bg-teal text-purple-darkest">prize 3</div>
-					<div class="prize-card bg-pink-purple text-purple-darkest">prize 4</div>
-					<div class="prize-card bg-yellow text-purple-darkest">prize 5</div>
-					<div class="prize-card bg-purple-mid text-whiteish">prize 6</div>
+					{#each prizes as prize, i}
+						<div
+							class="prize-card flex flex-col items-center justify-between p-4 text-center"
+							style="background-color: {prizeColors[i % prizeColors.length]
+								.bg}; color: {prizeColors[i % prizeColors.length].text}"
+						>
+							<h1 class="mt-4 text-3xl underline">{prize.title}</h1>
+							<p class="mt-4 text-lg">{prize.description}</p>
+							<img
+								src={prize.src}
+								alt={prize.title}
+								class="m-4 w-full flex-1 rounded-sm object-contain"
+							/>
+							<p class="text-lg">{prize.hours}</p>
+						</div>
+					{/each}
 				</div>
-				<div class="prize-set" aria-hidden="true">
-					<div class="prize-card bg-magenta text-whiteish">prize 1</div>
-					<div class="prize-card bg-blue text-whiteish">prize 2</div>
-					<div class="prize-card bg-teal text-purple-darkest">prize 3</div>
-					<div class="prize-card bg-pink-purple text-purple-darkest">prize 4</div>
-					<div class="prize-card bg-yellow text-purple-darkest">prize 5</div>
-					<div class="prize-card bg-purple-mid text-whiteish">prize 6</div>
-				</div>
+				{#each prizes as prize, i}
+					<div
+						class="prize-card flex flex-col items-center justify-between p-4 text-center"
+						style="background-color: {prizeColors[i % prizeColors.length].bg}; color: {prizeColors[
+							i % prizeColors.length
+						].text}"
+					>
+						<h1 class="mt-4 text-3xl underline">{prize.title}</h1>
+						<p class="mt-4 text-lg">{prize.description}</p>
+						<img
+							src={prize.src}
+							alt={prize.title}
+							class="m-4 w-full flex-1 rounded-sm object-contain"
+						/>
+						<p class="text-lg">{prize.hours}</p>
+					</div>
+				{/each}
 			</div>
 		</div>
-		<h2>we have step-by-step guides to help:</h2>
-		<div class="grid w-5/12 grid-cols-2">
-			<div class="guide-container">
-				<p>hi</p>
-				<p>hi</p>
+		<!-- guides -->
+		<div class="guides w-full flex flex-col items-center justify-center gap-4 text-center">
+			<h2>we have step-by-step guides to help:</h2>
+			<div class="grid w-5/12 grid-cols-2">
+				<div class="guide-container">
+					<p>hi</p>
+					<p>hi</p>
+				</div>
+				<div class="guide-container">2</div>
+				<div class="guide-container">3</div>
+				<div class="guide-container">4</div>
+				<div class="guide-container">5</div>
+				<div class="guide-container">6</div>
 			</div>
-			<div class="guide-container">2</div>
-			<div class="guide-container">3</div>
-			<div class="guide-container">4</div>
-			<div class="guide-container">5</div>
-			<div class="guide-container">6</div>
-		</div>
-		<a href="placeholder">view more →</a>
-		<h2>and a collection of <a href="placeholder">free resources</a> for you to use! :)</h2>
-	</div>
-	<!-- examples & faq -->
-	<div class="flex flex-col items-center justify-center gap-2 text-center">
-		<!-- examples -->
-		<div>
-			<h1>example projects</h1>
-			<p>Look at these cool projects other Storyboarders have made & get inspired!</p>
-			<br />Stuck on ideas? explore the <a href="placeholder">#storyboard</a> channel & feel free to
-			ask questions.
-			<!-- TV w projects - make a componentn later or sum -->
-			<div></div>
-		</div>
-		<!-- faq -->
-		<div>
-			<h1>FAQ</h1>
-			<!-- (embed w renpy game) -->
-			<h2>
-				More questions? ask in <a href="placeholder">#storyboard-help</a> or email
-				<a href="mailto:kat@hackclub.com">kat@hackclub.com</a>
-			</h2>
+			<a href="placeholder">view more →</a>
+			<h2>and a collection of <a href="placeholder">free resources</a> for you to use! :)</h2>
 		</div>
 	</div>
-	<!-- footer -->
-	<div class="flex flex-col items-center justify-center gap-2 text-center">
-		<h1>made with ♡ by teens, for teens</h1>
-		<!-- team -->
+</div>
+<!-- examples & faq -->
+<div class="flex flex-col items-center justify-center gap-2 text-center">
+	<!-- examples -->
+	<div>
+		<h1>example projects</h1>
+		<p>Look at these cool projects other Storyboarders have made & get inspired!</p>
+		<br />Stuck on ideas? explore the <a href="placeholder">#storyboard</a> channel & feel free to
+		ask questions.
+		<!-- TV w projects - make a componentn later or sum -->
 		<div></div>
-		<p>
-			<a href="https://hackclub.com">hack club</a> ✦ <a href="https://slack.hackclub.com">slack</a>
-			✦ <a href="https://clubs.hackclub.com">clubs</a> ✦
-			<a href="https://conduct.hackclub.com">code of conduct</a>
-		</p>
-		<p>this website is <a href="https://github.com/ikealoverkat/storyboard-v3">open source!</a></p>
 	</div>
+	<!-- faq -->
+	<div>
+		<h1>FAQ</h1>
+		<!-- (embed w renpy game) -->
+		<h2>
+			More questions? ask in <a href="placeholder">#storyboard-help</a> or email
+			<a href="mailto:kat@hackclub.com">kat@hackclub.com</a>
+		</h2>
+	</div>
+</div>
+<!-- footer -->
+<div class="flex flex-col items-center justify-center gap-2 text-center">
+	<h1>made with ♡ by teens, for teens</h1>
+	<!-- team -->
+	<div></div>
+	<p>
+		<a href="https://hackclub.com">hack club</a> ✦ <a href="https://slack.hackclub.com">slack</a>
+		✦ <a href="https://clubs.hackclub.com">clubs</a> ✦
+		<a href="https://conduct.hackclub.com">code of conduct</a>
+	</p>
+	<p>this website is <a href="https://github.com/ikealoverkat/storyboard-v3">open source!</a></p>
 </div>
