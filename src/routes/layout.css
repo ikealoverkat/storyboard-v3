@@ -18,7 +18,9 @@ a,
 p,
 h1,
 h2,
-h3, input, button {
+h3,
+input,
+button {
 	font-family: 'Hedvig Letters Serif', serif;
 	font-optical-sizing: auto;
 	font-weight: 400;
@@ -26,30 +28,32 @@ h3, input, button {
 }
 
 .text-glow {
-	filter: drop-shadow(0px 0px 12px var(--color-teal))
+	filter: drop-shadow(0px 0px 12px currentColor);
 }
 
 @property --pink-stop {
-    syntax: "<percentage>";
-    inherits: false;
-    initial-value: 35%;
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 35%;
 }
 /* hero */
 .ok-btn {
-    --pink-stop: 35%;
+	--pink-stop: 35%;
 
-    background-image: linear-gradient(
-        175deg,
-        var(--color-teal) 0%,
-        var(--color-pink-purple) var(--pink-stop),
-        var(--color-teal)
-    );
+	background-image: linear-gradient(
+		175deg,
+		var(--color-teal) 0%,
+		var(--color-pink-purple) var(--pink-stop),
+		var(--color-teal)
+	);
 
-    transition: --pink-stop 200ms ease, transform 200ms ease;
+	transition:
+		--pink-stop 200ms ease,
+		transform 200ms ease;
 }
 
 .ok-btn:hover {
-    --pink-stop: 60%;
+	--pink-stop: 60%;
 	transform: scale(1.05, 1.05);
 }
 
@@ -57,13 +61,140 @@ h3, input, button {
 	transform: scale(0.9, 0.9);
 }
 
+.hero {
+	position: relative;
+}
+
+.hero::after {
+	content: '';
+	position: absolute;
+	inset-inline: 0;
+	z-index: 2;
+	bottom: 0;
+	height: 120px;
+	background-image: linear-gradient(to bottom, transparent 0%, var(--color-purple-darkest) 100%);
+	pointer-events: none;
+}
+
+/* prizes */
+
+.prize-scroll {
+	overflow: hidden;
+	width: 100%;
+	padding: 3rem 0 4.5rem;
+}
+
+.prize-track {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	width: max-content;
+	animation: prize-scroll 26s linear infinite;
+}
+
+.prize-scroll:hover .prize-track {
+	animation-play-state: paused;
+}
+
+.prize-set {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	gap: 0.25rem;
+	padding-right: 0.25rem;
+}
+
+.prize-card {
+	position: relative;
+	flex: none;
+	width: clamp(280px, 34vw, 380px);
+	aspect-ratio: 3 / 4;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Hedvig Letters Serif', serif;
+	font-size: 1.75rem;
+	text-align: center;
+	clip-path: polygon(4% 8%, 96% 0%, 96% 100%, 4% 92%);
+	filter: drop-shadow(8px 8px 2px var(--color-purple-darkest));
+	transition: transform 200ms ease;
+}
+
+.prize-card::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(115deg, rgb(255 255 255 / 0.4) 0%, rgb(255 255 255 / 0) 45%);
+	pointer-events: none;
+}
+
+.prize-card:nth-child(odd) {
+	clip-path: polygon(96% 8%, 4% 0%, 4% 100%, 96% 92%);
+}
+
+.prize-card:hover {
+	transform: translate3d(0, -8px, 0);
+}
+
+@keyframes prize-scroll {
+	to {
+		transform: translateX(-50%);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.prize-track {
+		animation: none;
+	}
+}
+
 /* how does storyboard work */
 
 .how-container {
+	position: relative;
 	margin: 0.5rem;
-	padding: 2rem;
-	border: 2px solid black;
+	padding: 1.2rem;
+	border: 2px solid var(--color-whiteish);
+	background-color: color-mix(in srgb, var(--color-whiteish) 80%, transparent);
+	backdrop-filter: blur(8px);
+	transition: all;
+	transition-duration: 200ms;
 }
+
+.how-container:hover {
+	padding: 1.3rem;
+	margin: 0.6rem;
+	transform: scale(1.03, 1.03);
+}
+
+.how-container::after {
+	content: "";
+	position: absolute;
+	inset: -2px;
+	border: 2px solid transparent;
+	box-shadow: 8px 8px 2px var(--color-purple-darkest);
+	pointer-events: none;
+}
+
+.how-number {
+	border: 3px solid var(--color-purple-darkest);
+	width: fit-content;
+	padding: 6px 16px;
+	border-radius: 100px;
+	font-family: 'Hedvig Letters Serif', serif;
+	font-size: larger;
+	color: var(--color-purple-darkest);
+	filter: drop-shadow(0px 2px 0px var(--color-purple-darkest));
+}
+
+/* and we'll send you prizes */
+
+.prizes-text {
+	margin: 4rem;
+	filter: drop-shadow(0px 0px 4px var(--color-purple-darkest)) drop-shadow(0px 0px 12px var(--color-purple-darkest)) drop-shadow(0px 0px 12px var(--color-purple-darkest)) drop-shadow(0px 0px 18px var(--color-purple-darkest));
+}
+
 
 /* we have stepbystep guides to help */
 
@@ -75,3 +206,4 @@ h3, input, button {
 	justify-content: start;
 	gap: 0.5rem;
 }
+
